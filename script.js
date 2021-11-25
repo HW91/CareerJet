@@ -1,30 +1,4 @@
 
-HW91 removed
- 1 contributor
-551 lines (490 sloc)  17.9 KB
-mapboxgl.accessToken =
-  "pk.eyJ1IjoiY2FuYWdpZyIsImEiOiJja3V6dzdtNWYydGExMndvZG12NThqbmpkIn0._qXSCKmbH3kafrivy_7o9w";
-const map = new mapboxgl.Map({
-  container: "map",
-  style: "mapbox://styles/canagig/ckv4ib5425pot14o6shn1e64g",
-  center: [-101.871088,36.717658],
-  zoom: 3,
-});
-
-const nav = new mapboxgl.NavigationControl({ showCompass: false });
-map.addControl(nav, 'top-right');
-// Add geolocate control to the map.
-map.addControl(
-  new mapboxgl.GeolocateControl({
-  positionOptions: {
-  enableHighAccuracy: false
-  },
-  // When active the map will receive updates to the device's location as it changes.
-  trackUserLocation: true,
-  // Draw an arrow next to the location dot to indicate which direction the device is heading.
-  showUserHeading: true
-  }
-// Create a popup, but don't add it to the map yet.
 var popup = new mapboxgl.Popup({
   // closeButton: false,
 });
@@ -176,12 +150,7 @@ function renderListings(features) {
     empty.textContent = "No results found";
     listingEl.appendChild(empty);
   } else {
-    // I add this part of code for not needing a map dragging to populate the results on the sidebar:
-    // map.fitBounds([
-    //   [-78.766357, 42.793953],
-    //   [-88.0686147, 37.9002342],
-    // ]);
-    /////////////
+   
 
     // empty.textContent = 'Drag the map to populate results';
     // listingEl.appendChild(empty);
@@ -548,21 +517,3 @@ map.on("load", async () => {
 }
 
 $(window).ready(hideLoader);
-
-// Strongly recommended: Hide loader after 20 seconds, even if the page hasn't finished loading
-setTimeout(hideLoader, 20 * 1000);
-});
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Loading complete"
- https://github.com/HW91/canagig/blob/main/script.js#:~:text=Skip%20to%20content,Loading%20complete
