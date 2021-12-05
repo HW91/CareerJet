@@ -1,133 +1,126 @@
-import csv
-from datetime import datetime
-import requests
-from bs4 import BeautifulSoup
+<!-- Careerjet search box -->
+<style>
+div.cjsearchbox{
 
-def get_url(position, location):
-  """Generate a url from position and location"""
-  template = 'https://www.simplyhired.com/search?q=cannabis{}&1={}'
-  url = template.format(position, location)
-  return url
+text-align: left ; 
+border: 1px solid #919294; 
+background-color: #FFFFFF ;
+padding: 8px ; 
+font-family: Arial, sans-serif, Sans-serif ; 
+font-size: 13px ; 
+color: #000000; 
+width: 480px;
+}
 
-url = get_url('cannabis', '')
+div.cjsearchbox a{ 
+color: #198ADC ; 
+}
 
-response = requests.get(url)
-
-response
-
-response.reason
-'OK'
-
-soup = BeautifulSoup(response.text, 'html.parser')
-
-cards = soup.find_all('div', 'SerpJob-jobCard card isp')
+div.cjbotl a{
+   color: #198ADC;
+}
 
 
-card = cards[0]
-atag = card.h3.a
-job_title = atag.get('jobposting-title')
-job_url = 'https://www.simplyhired.com' + atag.get('href')
-company = card.find('span', 'JobPosting-labelWithIcon jobposting-company').text.strip()
-job_location = card.find('span', 'jobposting-location').get('data-rc-loc')
-job_summary = card.find('div', 'SerpJob-snippetContainer').text.strip()
-try:
-  job_salary = card.find('div', 'jobposting-salary SerpJob-salary').text.strip()
-except AttributeError:
-  job_salary = ''
+div.cjsearchbox form.cjsearchform{ 
+padding-top: 0px ; 
+padding-bottom: 0px ; 
+padding-left: 0px ; 
+padding-right: 0px ;
+}
 
-def get_record(card):
-  """Extract job data from a single record"""
-  atag = card.h3.a
-  job_title = atag.get('jobposting-title')
-  job_url = 'https://www.simplyhired.com' + atag.get('href')
-  company = card.find('span', 'JobPosting-labelWithIcon jobposting-company').text.strip()
-  job_location = card.find('span', 'jobposting-location').get('data-rc-loc')
-  job_summary = card.find('div', 'SerpJob-snippetContainer').text.strip()
-  try:
-    job_salary = card.find('div', 'jobposting-salary SerpJob-salary').text.strip()
-  except AttributeError:
-    job_salary = ''
+div#cjSearchResult{ 
+}
 
-  record = (job_title, company, job_location, job_summary, job_salary, job_url)
+div#cjSearchResult p.topline{ 
+font-size: 16px ; 
+font-weight: bold ; 
+margin-bottom: 8px ; 
+margin-top: 5px ;
+}
 
-  return record
+span.cjlabel{ 
+font-size: 13px ; 
+font-weight: bold ; 
+color: #000000; 
+}
 
-records = []
+span.cjlabelsmall{ 
+font-size: 11px ; 
+color: #000000; 
+}
 
-for card in cards:
-  record = get_record(card)
-  records.append(record)
+input.cjinput{ 
+width: 90%; 
+padding: 3px 0px;
+border: 1px solid #AAA;
+border-right: 1px solid #DDD;
+border-bottom: 1px solid #DDD;
+margin-top:2px;
+margin-bottom:2px;
+}
 
-"""Getting the next page"""
-while True:
-  try:
-    url = 'https://www.simplyhired.com' + soup.find('a', {'aria-label': 'Next page'}).get('href')
-  except AttributeError:
-    break
+input.cjbutton{  
+font-family:  Arial, sans-serif, Sans-serif; 
+}
 
-  response = requests.get(url)
-  soup = BeautifulSoup(response.text, 'html.parser')
-  cards = soup.find_all('div', 'SerpJob-jobCard card isp')
+div.cjjob{ 
+margin: 0px ; 
+margin-bottom: 10px ; 
+overflow: hidden ;
+}
 
-  for card in cards:
-    record = get_record(card)
-    records.append(record)
+div.cjjob p { 
+margin: 0px ; 
+}
 
+div.cjjob p.jobtitle{ 
+font-size: 14 ; 
+font-weight: bold ;
+}
 
-#Putting it all together
+div.cjjob .company{ 
+color: #666666; 
+}
 
-import csv
-from datetime import datetime
-import requests
-from bs4 import BeautifulSoup
+div.cjjob .locations{ 
+color: #666666;
+}
 
-def get_url(position, location):
-  # Generate a url from position and location
-  template = 'https://www.simplyhired.com/search?q=cannabis'
-  url = template.format(position, location)
-  return 
-  
-def get_record(card):
-  # Extract job data from a single record
-  atag = card.h3.a
-  job_title = atag.get('jobposting-title')
-  job_url = 'https://www.simplyhired.com' + atag.get('href')
-  company = card.find('span', 'JobPosting-labelWithIcon jobposting-company').text.strip()
-  job_location = card.find('span', 'jobposting-location').get('data-rc-loc')
-  job_summary = card.find('div', 'SerpJob-snippetContainer').text.strip()
-  try:
-    job_salary = card.find('div', 'jobposting-salary SerpJob-salary').text.strip()
-  except AttributeError:
-    job_salary = ''
+div.cjjob .site{ 
+color: #099E2D ; 
+}
 
-  record = (job_title, company, job_location, job_summary, job_salary, job_url)
+#search_box_tools span.button{
+float:left;
+color:#666;
+margin-left:5px;
+margin-right:5px;
+}
 
-  return record
-  
-def main(position, location):
-  # Run the main program routine
-  records = []
-  url = get_url(position, location)
+#search_box_tools span.button input{
+float:left ;
+color:#FFFFFF;
+padding: 1px 10px;
+font-weight: bold;
+cursor: pointer;
+border: 1px solid #d70;
+-webkit-border-radius: 2px;
+-moz-border-radius: 3px;
+border-radius: 2px;
+background: #e81;
+background-image: linear-gradient(top, #F19F40 0%, #EE8711 100%);
+background-image: -o-linear-gradient(top, #F19F40 0%, #EE8711 100%);
+background-image: -moz-linear-gradient(top, #F19F40 0%, #EE8711 100%);
+background-image: -webkit-linear-gradient(top, #F19F40 0%, #EE8711 100%);
+background-image: -ms-linear-gradient(top, #F19F40 0%, #EE8711 100%);
+background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #F19F40),color-stop(1, #EE8711));
+}
 
-  while True:
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, 'html.parser')
-    cards = soup.find_all('div', 'SerpJob-jobCard card isp')
-
-    for card in cards:
-      record = get_record(card)
-      records.append(record)
-  
-    try:
-      url = 'https://www.simplyhired.com' + soup.find('a', {'aria-label': 'Next page'}).get('href')
-    except AttributeError:
-      break
-
-  # Save the job data
-  with open('results.csv', 'w', newline='', encoding='utf-8') as f:
-    writer = csv.writer(f)
-    writer.writerow(['JobTitle', 'Company', 'Location', 'Summary', 'Salary', 'JobUrl'])
-    writer.writerows(records)
-
-# Run the main program
-main('cannabis', 'Orlando, FL')    
+</style>
+<a name="cjsearchboxanchor"></a>
+<div class="cjsearchbox">
+<script language="javascript" type="text/javascript" src="https://www.careerjet.com/partners/js_searchbox.html?n=7&nfr=1"></script>
+<div class="cjbotl bloggerDiv">
+</div>
+</div>
+<!-- end of Careerjet search box -->
