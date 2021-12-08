@@ -68,6 +68,7 @@ $result = $api->search($params);
 
     <hr>
     <br>
+    <h2> </h2>
         <table id="tabletodownload" class="table table-bordered">
           <thead>
             <tr>
