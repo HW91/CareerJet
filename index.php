@@ -42,7 +42,7 @@ $result = $api->search($params);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Jobs</title>
+  <title> </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -86,7 +86,7 @@ $result = $api->search($params);
 <body>
 
 <div class="container">
-  <h2>Search Jobs</h2>
+  <h2> </h2>
   <form action="">
     <div class="col-md-3">
       <div class="form-group">
@@ -114,13 +114,7 @@ $result = $api->search($params);
 
     <hr>
     <br>
-    <h2>Jobs</h2>
-    <div class="col-md-12">
-      <?php if ($result->type == 'JOBS') :
-      echo "Found ".$result->hits." jobs" ;
-              echo " on ".$result->pages." pages\n" ;
-        endif;
-      ?>
+    <h2> </h2>
         <table id="tabletodownload" class="table table-bordered">
           <thead>
             <tr>
@@ -174,5 +168,20 @@ $result = $api->search($params);
 
   </form>
 </div>
+<script type="text/javascript">
+  $(function() {
+    $("#tabletodownload").tableExport({
+            headings: true,                    // (Boolean), display table headings (th/td elements) in the <thead>
+            footers: true,                     // (Boolean), display table footers (th/td elements) in the <tfoot>
+            formats: ["xlsx"],    // (String[]), filetypes for the export
+            fileName: "id",                    // (id, String), filename for the downloaded file
+            bootstrap: true,                   // (Boolean), style buttons using bootstrap
+            position: "well" ,                // (top, bottom), position of the caption element relative to table
+            ignoreRows: null,                  // (Number, Number[]), row indices to exclude from the exported file
+            ignoreCols: null,                 // (Number, Number[]), column indices to exclude from the exported file
+            ignoreCSS: ".tableexport-ignore"   // (selector, selector[]), selector(s) to exclude from the exported file
+          });
+  })
+</script>
 </body>
 </html>
