@@ -86,7 +86,7 @@ $result = $api->search($params);
 <body>
 
 <div class="container">
-  <h2>Search Jobs</h2>
+  <h2> </h2>
   <form action="">
     <div class="col-md-3">
       <div class="form-group">
@@ -114,13 +114,7 @@ $result = $api->search($params);
 
     <hr>
     <br>
-    <h2>Jobs</h2>
-    <div class="col-md-12">
-      <?php if ($result->type == 'JOBS') :
-      echo "Found ".$result->hits." jobs" ;
-              echo " on ".$result->pages." pages\n" ;
-        endif;
-      ?>
+    <h2> </h2>
         <table id="tabletodownload" class="table table-bordered">
           <thead>
             <tr>
