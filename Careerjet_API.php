@@ -67,7 +67,7 @@
  * @link       http://www.careerjet.com/partners/api/php/
  */
 class Careerjet_API {
-  var $locale = 'en_US' ;
+  var $locale = '' ;
   var $version = '3.6';
   var $careerjet_api_content = '';
 
