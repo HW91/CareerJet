@@ -37,22 +37,64 @@ $result = $api->search($params);
 */
 ?>
 
-      <div>
-        <?php
-          if ( $result->type == 'JOBS' ){
-            
-            $jobs = $result->jobs ;
-            foreach( $jobs as $job )
-              echo '<tr>';
-              echo '<td><a target="_blank" href="'.$job->url.'">'.$job->title.'</td>' ;
-              echo '<td>'.$job->locations.'</td>';
-              echo '<td>'.$job->company.'</td>';
-              echo '<td>'.$job->salary.'</td>';
-              echo '<td>'.$job->date.'</td>';
-              echo '</tr>';               
-            }
+<body>
+
+<div class="container">
+  <h2> </h2>
+  <form action="">
+    <div class="col-md-3">
+      <div class="form-group">
+        <label for="keywords">By keywords:</label>
+        <input type="text" value="<?= @$_GET['keywords']; ?>" class="form-control" id="keywords" name="keywords" placeholder="Search by keywords">
+      </div>
+    </div>
+   <div class="col-md-3">
+      <div class="form-group">
+        <label for="location">By Location:</label>
+        <input type="text" value="<?= @$_GET['location']; ?>" class="form-control" id="location" name="location" placeholder="by location">
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <label for="company">By company:</label>
+        <input type="text" value="<?= @$_GET['company']; ?>" class="form-control" id="company" placeholder="By company" name="by_company">
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <button type="submit" id="submit" class="btn btn-default">Search</button>
+      </div>
+    </div>
+
+    <hr>
+    <br>
+    <h2> </h2>
+        <table id="tabletodownload" class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Location</th>
+              <th>Company</th>
+              <th>Salary</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+          <?php
+            if ( $result->type == 'JOBS' ){
+              
+              $jobs = $result->jobs ;
+              foreach( $jobs as $job ){
+                echo '<tr>';
+                echo '<td><a target="_blank" href="'.$job->url.'">'.$job->title.'</td>' ;
+                echo '<td>'.$job->locations.'</td>';
+                echo '<td>'.$job->company.'</td>';
+                echo '<td>'.$job->salary.'</td>';
+                echo '<td>'.$job->date.'</td>';
+                echo '</tr>';               
+              }
              
-          }
+            }
   ?>
           </tbody>
         </table>
