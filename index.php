@@ -6,25 +6,6 @@ $api = new Careerjet_API('en_GB') ;
 $page = (isset($_GET['page']) ? $_GET['page'] : 1); # Or from parameters.
 $affid = 'e7a8839aa0672d93a3c52df41a2ecb62';
 
-
-$params = array();
-if (@trim($_GET['keywords']) != '') {
-  $params['keywords'] = $_GET['keywords'];
-}
-if (@trim($_GET['location']) != '') {
-  $params['location'] = $_GET['location'];
-}
-if (@trim($_GET['company']) != '') {
-  $params['company'] = $_GET['company'];
-}
-$params['page'] = $page;
-$params['affid'] = $affid;
-
-
-$result = $api->search($params);
-
-
-
 # When location is ambiguous
 /*if ( $result->type == 'LOCATIONS' ){
   $locations = $result->solveLocations ;
