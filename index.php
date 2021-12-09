@@ -1,4 +1,7 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <?php
 
 require_once "Careerjet_API.php" ;
 
@@ -38,8 +41,95 @@ $result = $api->search($params);
 
 
 ?>
+  <title>Jobs</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://www.jqueryscript.net/demo/jQuery-Plugin-To-Export-Table-Data-To-CSV-File-table2csv/src/table2csv.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
+  
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.flash.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/TableExport/3.2.5/css/tableexport.min.css">  
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+  <script src="https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.2/xlsx.core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/TableExport/3.3.5/js/tableexport.min.js"></script>
+</head>
+<style type="text/css">
+  #submit {
+    margin-top: 22px;
+    padding: 12px 30px;
+    border-radius: 0px;
+    background: #007922;
+    border: solid 1px #007922;
+    color: white;
+  }
+  input[type="text"] {
+    padding: 20px;
+    border-radius: 0px;
+  }
 
+</style>
+<body>
 
+<div class="container">
+  <h2>Search Jobs</h2>
+  <form action="">
+    <div class="col-md-3">
+      <div class="form-group">
+        <label for="keywords">By keywords:</label>
+        <input type="text" value="<?= @$_GET['keywords']; ?>" class="form-control" id="keywords" name="keywords" placeholder="Search by keywords">
+      </div>
+    </div>
+   <div class="col-md-3">
+      <div class="form-group">
+        <label for="location">By Location:</label>
+        <input type="text" value="<?= @$_GET['location']; ?>" class="form-control" id="location" name="location" placeholder="by location">
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <label for="company">By company:</label>
+        <input type="text" value="<?= @$_GET['company']; ?>" class="form-control" id="company" placeholder="By company" name="by_company">
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <button type="submit" id="submit" class="btn btn-default">Search</button>
+      </div>
+    </div>
+
+    <hr>
+    <br>
+    <h2>Jobs</h2>
+    <div class="col-md-12">
+      <?php if ($result->type == 'JOBS') :
+      echo "Found ".$result->hits." jobs" ;
+              echo " on ".$result->pages." pages\n" ;
+        endif;
+      ?>
+        <table id="tabletodownload" class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Location</th>
+              <th>Company</th>
+              <th>Salary</th>
+              <th>Date</th>
+            </tr>
+          </thead>
           <tbody>
           <?php
             if ( $result->type == 'JOBS' ){
@@ -82,5 +172,6 @@ $result = $api->search($params);
     </div>
 
   </form>
-
+</div>
 </body>
+</html>
