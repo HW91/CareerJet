@@ -86,31 +86,7 @@ $result = $api->search($params);
 <body>
 
 <div class="container">
-  <h2>Search Jobs</h2>
-  <form action="">
-    <div class="col-md-3">
-      <div class="form-group">
-        <label for="keywords">By keywords:</label>
-        <input type="text" value="<?= @$_GET['keywords']; ?>" class="form-control" id="keywords" name="keywords" placeholder="Search by keywords">
-      </div>
-    </div>
-   <div class="col-md-3">
-      <div class="form-group">
-        <label for="location">By Location:</label>
-        <input type="text" value="<?= @$_GET['location']; ?>" class="form-control" id="location" name="location" placeholder="by location">
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="form-group">
-        <label for="company">By company:</label>
-        <input type="text" value="<?= @$_GET['company']; ?>" class="form-control" id="company" placeholder="By company" name="by_company">
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="form-group">
-        <button type="submit" id="submit" class="btn btn-default">Search</button>
-      </div>
-    </div>
+
 
     <hr>
     <br>
