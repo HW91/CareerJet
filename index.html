@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>Jobs</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://www.jqueryscript.net/demo/jQuery-Plugin-To-Export-Table-Data-To-CSV-File-table2csv/src/table2csv.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
+  
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.flash.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/TableExport/3.2.5/css/tableexport.min.css">  
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+  <script src="https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.2/xlsx.core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/TableExport/3.3.5/js/tableexport.min.js"></script>
+<style type="text/css">
+  #submit {
+    margin-top: 22px;
+    padding: 12px 30px;
+    border-radius: 0px;
+    background: #007922;
+    border: solid 1px #007922;
+    color: white;
+  }
+  input[type="text"] {
+    padding: 20px;
+    border-radius: 0px;
+  }
+
+</style></head>
+  
+  <body>
+
+  <div class="container">
+    <h2>Search Jobs</h2>
+    <form action="">
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="keywords">By keywords:</label>
+          <input type="text" value="" class="form-control" id="keywords" name="keywords" placeholder="Search by keywords">
+        </div>
+      </div>
+     <div class="col-md-3">
+        <div class="form-group">
+          <label for="location">By Location:</label>
+          <input type="text" value="" class="form-control" id="location" name="location" placeholder="by location">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="company">By company:</label>
+          <input type="text" value="" class="form-control" id="company" placeholder="By company" name="by_company">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <button type="submit" id="submit" class="btn btn-default">Search</button>
+        </div>
+      </div>
+
+      <hr>
+      <br>
+    
+      <div class="col-md-12">
+     
+          <table id="tabletodownload" class="table table-bordered"><caption class="btn-toolbar well"><button data-fileblob="{&quot;data&quot;:[[&quot;Title&quot;,&quot;Location&quot;,&quot;Company&quot;,&quot;Salary&quot;,&quot;Date&quot;],[&quot;National Warehouse &amp; Distribution Manager&quot;,&quot;Liverpool&quot;,&quot;Prysmian Group&quot;,&quot;&quot;,&quot;Tue, 07 Dec 2021 23:56:06 GMT&quot;],[&quot;Graduate Customer Success &amp; Acquisition Manager&quot;,&quot;Andover, Hampshire&quot;,&quot;Randstad&quot;,&quot;£25000 per year&quot;,&quot;Wed, 08 Dec 2021 08:59:51 GMT&quot;],[&quot;Entry Level Graduate Scheme&quot;,&quot;Yeadon, West Yorkshire&quot;,&quot;Randstad&quot;,&quot;£24000 per year&quot;,&quot;Wed, 08 Dec 2021 08:59:32 GMT&quot;],[&quot;Traffic Marshall&quot;,&quot;Maidstone, Kent&quot;,&quot;Randstad&quot;,&quot;£13 per hour&quot;,&quot;Wed, 08 Dec 2021 08:59:17 GMT&quot;],[&quot;Sales Manager for Submarine &amp; HV Cable Systems - UK and North Europe&quot;,&quot;Bishopstoke, Hampshire&quot;,&quot;Prysmian Group&quot;,&quot;&quot;,&quot;Sat, 04 Dec 2021 23:54:37 GMT&quot;],[&quot;Purchasing Intern&quot;,&quot;Liverpool&quot;,&quot;Prysmian Group&quot;,&quot;&quot;,&quot;Fri, 03 Dec 2021 23:00:29 GMT&quot;],[&quot;Salesforce Effectiveness Manager&quot;,&quot;United Kingdom&quot;,&quot;Xcellin&quot;,&quot;£65000 per year&quot;,&quot;Sat, 04 Dec 2021 08:16:58 GMT&quot;],[&quot;QA Lead&quot;,&quot;United Kingdom&quot;,&quot;WorldFirst&quot;,&quot;&quot;,&quot;Wed, 08 Dec 2021 02:56:49 GMT&quot;],[&quot;Marketing Recruitment Consultant&quot;,&quot;Northampton&quot;,&quot;PFP Wallace Hind Selection&quot;,&quot;£25000 - 35000 per year&quot;,&quot;Fri, 29 Oct 2021 07:54:54 GMT&quot;],[&quot;Service Engineer&quot;,&quot;Birmingham&quot;,&quot;PFP Wallace Hind Selection&quot;,&quot;£30000 - 45000 per year&quot;,&quot;Fri, 29 Oct 2021 07:46:06 GMT&quot;],[&quot;Purchasing Manager&quot;,&quot;Nottingham&quot;,&quot;PFP Wallace Hind Selection&quot;,&quot;£45000 - 50000 per year&quot;,&quot;Fri, 29 Oct 2021 07:44:25 GMT&quot;],[&quot;Clinical Partnership Manager XC3621&quot;,&quot;South West England&quot;,&quot;Xcellin&quot;,&quot;&quot;,&quot;Fri, 26 Nov 2021 08:47:44 GMT&quot;],[&quot;Pharmacist&quot;,&quot;London&quot;,&quot;Xcellin&quot;,&quot;£45000 per year&quot;,&quot;Sun, 21 Nov 2021 08:06:01 GMT&quot;],[&quot;HCA&quot;,&quot;Hastings, East Sussex&quot;,&quot;JCare Staffing&quot;,&quot;£10.2 - 11 per hour&quot;,&quot;Fri, 12 Nov 2021 08:06:49 GMT&quot;],[&quot;Senior Broker&quot;,&quot;London&quot;,&quot;Capital Vintners&quot;,&quot;£18000 per year&quot;,&quot;Wed, 08 Dec 2021 08:38:13 GMT&quot;],[&quot;Designer&quot;,&quot;London&quot;,&quot;&quot;,&quot;&quot;,&quot;Wed, 08 Dec 2021 12:11:30 GMT&quot;],[&quot;Independent Advocate&quot;,&quot;Glasgow&quot;,&quot;Barnardo's&quot;,&quot;£22135 per year&quot;,&quot;Wed, 08 Dec 2021 08:59:59 GMT&quot;],[&quot;Consultant Neurology&quot;,&quot;Swindon&quot;,&quot;Empire Locums&quot;,&quot;&quot;,&quot;Wed, 08 Dec 2021 08:59:54 GMT&quot;],[&quot;Head of Department (HoD), Intelligence and Digital Delivery, DTI, FCA&quot;,&quot;United Kingdom&quot;,&quot;Odgers Berndtson&quot;,&quot;&quot;,&quot;Wed, 08 Dec 2021 08:59:53 GMT&quot;],[&quot;Sales &amp; Customer Administrator&quot;,&quot;West Lothian&quot;,&quot;Escape Recruitment Services&quot;,&quot;£22000 - 25000 per year&quot;,&quot;Wed, 08 Dec 2021 08:59:51 GMT&quot;]],&quot;fileName&quot;:&quot;tabletodownload&quot;,&quot;mimeType&quot;:&quot;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet&quot;,&quot;fileExtension&quot;:&quot;.xlsx&quot;}" class="btn btn-default xlsx">Export to xlsx</button></caption>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Location</th>
+                <th>Company</th>
+                <th>Salary</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr><td><a target="_blank" href="http://jobviewtrack.com/en-gb/job-1f1a417a4c160a06480153064825071411521d0a1c074344530d6005010f401152613f001c020d4f011b0c53674a534c4a011d6c631d53171a080c1211491b06493e4b455c4a48166d394606450b07141d0245641d1b1d0143494859440b016c6915540a070f0f0b456d150608144f593c1c1956575611/d5d798f2ac8a32fb547439a926e94cb1.html?affid=e7a8839aa0672d93a3c52df41a2ecb62">National Warehouse &amp; Distribution Manager</a></td><td>Liverpool</td><td>Prysmian Group</td><td></td><td>Tue, 07 Dec 2021 23:56:06 GMT</td></tr><tr><td><a target="_blank" href="http://jobviewtrack.com/en-gb/job-184f416e58171b014a1152433b140d04005307482412444a5a485f662c1b54004f0e0d134e26065101011a1a5e4252430d290e00461345116a221b14114f190d1b53674a534c4a011d6c600641071d001a02456d150608144f593f6e58171b014a1152433b140d040053076958471e1e0a1a/a53fa7f4b3b547bcb8150f4ca4661316.html?affid=e7a8839aa0672d93a3c52df41a2ecb62">Graduate Customer Success &amp; Acquisition Manager</a></td><td>Andover, Hampshire</td><td>Randstad</td><td>£25000 per year</td><td>Wed, 08 Dec 2021 08:59:51 GMT</td></tr><tr><td><a target="_blank" href="http://jobviewtrack.com/en-gb/job-1949416a5f050b1b460045432d0f1a151c00380d1f16462978435916164e6b11560604632915044401091d160a785e4548090a6c600641071d001a0245651a1c1b0a286c4f4c49110e1a42546c061e040266541541505d47/a5c0038b233bd43fb196989525aef77f.html?affid=e7a8839aa0672d93a3c52df41a2ecb62">Entry Level Graduate Scheme</a></td><td>Yeadon, West Yorkshire</td><td>Randstad</td><td>£24000 per year</td><td>Wed, 08 Dec 2021 08:59:32 GMT</td></tr><tr><td><a target="_blank" href="http://jobviewtrack.com/en-gb/job-1f4941795f0509084e1721525c575c5653/03e52e0b1d1e11bf7a7067bbcd245783.html?affid=e7a8839aa0672d93a3c52df41a2ecb62">Traffic Marshall</a></td><td>Maidstone, Kent</td><td>Randstad</td><td>£13 per hour</td><td>Wed, 08 Dec 2021 08:59:17 GMT</td></tr><tr><td><a target="_blank" href="http://jobviewtrack.com/en-gb/job-1a1e416e4c06030b0727410f0d124e2a044e150f0c0128636b0d6e050d0242546d0206000902172227090516590b704c4305080b5576683548220f050945762b0811464e1d7e4c080a1d264514575e545a/247b579bf9adb5b9833b62ca6535968c.html?affid=e7a8839aa0672d93a3c52df41a2ecb62">Sales Manager for Submarine &amp; HV Cable Systems - UK and North Europe</a></td><td>Bishopstoke, Hampshire</td><td>Prysmian Group</td><td></td><td>Sat, 04 Dec 2021 23:54:37 GMT</td></tr><tr><td><a target="_blank" href="http://jobviewtrack.com/en-gb/job-184f417d58160c064607490d0f6327091145060668421e1905151b/0f3de4f10c80bf234c7aca048ece1dde.html?affid=e7a8839aa0672d93a3c52df41a2ecb62">Purchasing Intern</a></td><td>Liverpool</td><td>Prysmian Group</td><td></td><td>Fri, 03 Dec 2021 23:00:29 GMT</td></tr><tr><td><a target="_blank" href="http://jobviewtrack.com/en-gb/job-1c4f417e4c080a1d411b52000d4123060b41130d1b71674a534c4a011d6c74154c061b0701150645762d0f154f4849445b01010b540721565c/bae53ac1a268a672215c0cff207f6089.html?affid=e7a8839aa0672d93a3c52df41a2ecb62">Salesforce Effectiveness Manager</a></td><td>United Kingdom</td><td>Xcellin</td><td>£65000 per year</td><td>Sat, 04 Dec 2021 08:16:58 GMT</td></tr><tr><td><a target="_blank" href="http://jobviewtrack.com/en-gb/job-1849417c6c44230b4610223229413f26676c11090d721f1f/bb4d8fc12705455554b4059287c36411.html?affid=e7a8839aa0672d93a3c52df41a2ecb62">QA Lead</a></td><td>United Kingdom</td><td>WorldFirst</td><td></td><td>Wed, 08 Dec 2021 02:56:49 GMT</td></tr><tr><td><a target="_blank" href="http://jobviewtrack.com/en-gb/job-1f1341604c16040b531d4e0448330b0417551d1c0416445f1d6e420a1c1b4b00410d1c633c02065201011d1e4f45490d6e0b011d5218540206156c2a04521f0d1d1a444c1d6e420a1c1b4b00410d1c633c02065201011d1e4f45490d60051d054200490d0f632306174b111c001d4d2a0c1e14525a58/e428bd0b33a8a49aa4e6a6b3504ca805.html?affid=e7a8839aa0672d93a3c52df41a2ecb62">Marketing Recruitment Consultant</a></td><td>Northampton</td><td>PFP Wallace Hind Selection</td><td>£25000 - 35000 per year</td><td>Fri, 29 Oct 2021 07:54:54 GMT</td></tr><tr><td><a target="_blank" href="http://jobviewtrack.com/en-gb/job-4e13417e4816190744110026060607090045066a2c1d4d42534848166d3d4206560a0b046f5651184d5b5e/3fdadb050c719aac840ad16d7493cf8a.html?affid=e7a8839aa0672d93a3c52df41a2ecb62">Service Engineer</a></td><td>Birmingham</td><td>PFP Wallace Hind Selection</td><td>£30000 - 45000 per year</td><td>Fri, 29 Oct 2021 07:46:06 GMT</td></tr><tr><td><a target="_blank" href="http://jobviewtrack.com/en-gb/job-1319417d58160c064607490d0f4123060b41130d1b71674a534c4a011d6c7701520000001d0e0b4775595a4a1c1d0c/53aff5eb72bd7bfa1dcdfde528a3bbbf.html?affid=e7a8839aa0672d93a3c52df41a2ecb62">Purchasing Manager</a></td><td>Nottingham</td><td>PFP Wallace Hind Selection</td><td>£45000 - 50000 per year</td><td>Fri, 29 Oct 2021 07:44:25 GMT</td></tr><tr><td><a target="_blank" href="http://jobviewtrack.com/en-gb/job-1319417d4c161b004206530b01114e2a044e150f0c0128685144430d0c0f4b546d02060009021722390907124d4e4f2f6e0806004e17410f6a310f15114e111a1a1b435b3c1b14/e992e83da0d88ef9fc143861dc0591ff.html?affid=e7a8839aa0672d93a3c52df41a2ecb62">Clinical Partnership Manager XC3621</a></td><td>South West England</td><td>Xcellin</td><td></td><td>Fri, 26 Nov 2021 08:47:44 GMT</td></tr><tr><td><a target="_blank" href="http://jobviewtrack.com/en-gb/job-484a417d45051d03461749101c605f555c194051/82afa09cc0f29499049d4a61d883996d.html?affid=e7a8839aa0672d93a3c52df41a2ecb62">Pharmacist</a></td><td>London</td><td>Xcellin</td><td>£45000 per year</td><td>Sun, 21 Nov 2021 08:06:01 GMT</td></tr><tr><td><a target="_blank" href="http://jobviewtrack.com/en-gb/job-4f49412c1c505b5a1645/49d29ad158eccf01cc5c0fd205def0f8.html?affid=e7a8839aa0672d93a3c52df41a2ecb62">HCA</a></td><td>Hastings, East Sussex</td><td>JCare Staffing</td><td>£10.2 - 11 per hour</td><td>Fri, 12 Nov 2021 08:06:49 GMT</td></tr><tr><td><a target="_blank" href="http://jobviewtrack.com/en-gb/job-1213417e480a060155546211070a0b1567620607021658296e48430d001c2645125a515557/91e0e515128817a1b02924a5d02408f2.html?affid=e7a8839aa0672d93a3c52df41a2ecb62">Senior Broker</a></td><td>London</td><td>Capital Vintners</td><td>£18000 per year</td><td>Wed, 08 Dec 2021 08:38:13 GMT</td></tr><tr><td><a target="_blank" href="http://jobviewtrack.com/en-gb/job-1f4a416948170609491152625953575e5119/63f4f57a319a431562018c0961a8dff6.html?affid=e7a8839aa0672d93a3c52df41a2ecb62">Designer</a></td><td>London</td><td></td><td></td><td>Wed, 08 Dec 2021 12:11:30 GMT</td></tr><tr><td><a target="_blank" href="http://jobviewtrack.com/en-gb/job-4c49416443000a1e421a440606154e2601561b0b08074f297c495b0b0c0f5311222a06050b17004e100d07072b1a0b1e1e5558/ca3da2d58518ff914527f7eb96b57f39.html?affid=e7a8839aa0672d93a3c52df41a2ecb62">Independent Advocate</a></td><td>Glasgow</td><td>Barnardo's</td><td>£22135 per year</td><td>Wed, 08 Dec 2021 08:59:59 GMT</td></tr><tr><td><a target="_blank" href="http://jobviewtrack.com/en-gb/job-4813416348111d014b1b471a482201091655181c081d5e297e4243171a0253154e176a2f0b12174f18070e0a2b1a081f185056/52eb603b37fc05f812ac718d2a2c5d69.html?affid=e7a8839aa0672d93a3c52df41a2ecb62">Consultant Neurology</a></td><td>Swindon</td><td>Empire Locums</td><td></td><td>Wed, 08 Dec 2021 08:59:54 GMT</td></tr><tr><td><a target="_blank" href="http://jobviewtrack.com/en-gb/job-1c19416548050b4e4812002701060713044c76200c124e0b524b0d200a024e02451111632602044454070f536e4e4d4c5f10020b4900222b0d000a470a46542107074f4751444a01010d4276640a0f081a060900300d051a5c4e4f542c515b/4266def369c60ec4add057c15e3be54e.html?affid=e7a8839aa0672d93a3c52df41a2ecb62">Head of Department (HoD), Intelligence and Digital Delivery, DTI, FCA</a></td><td>United Kingdom</td><td>Odgers Berndtson</td><td></td><td>Wed, 08 Dec 2021 08:59:53 GMT</td></tr><tr><td><a target="_blank" href="http://jobviewtrack.com/en-gb/job-4e12417e4c080a1d0735440e010f07141152151c06012868485e590b020b555461070508000e165406091d1c58297e585e10000342060030090d0b14677315040c00286a5940440a061d5306411707136f515c19/117bfe8f29a257130b71180389d7f0da.html?affid=e7a8839aa0672d93a3c52df41a2ecb62">Sales &amp; Customer Administrator</a></td><td>West Lothian</td><td>Escape Recruitment Services</td><td>£22000 - 25000 per year</td><td>Wed, 08 Dec 2021 08:59:51 GMT</td></tr>          </tbody>
+          </table>
+                  <ul class="pagination">
+            <li class="active"><a href="#">1</a></li><li><a href="?keywords=&amp;location=&amp;company=&amp;page=2">&gt;&gt;</a></li>        </ul>
+      </div>
+
+    </form>
+  </div>
+
+  </body>
+</html>
