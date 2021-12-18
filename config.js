@@ -2,7 +2,7 @@
 
 // eslint-disable-next-line no-unused-vars
 const config = {
-  style: 'mapbox://styles/mapbox/light-v10',
+  style: 'mapbox://styles/canagig/ckv4ib5425pot14o6shn1e64g',
   accessToken:
     'pk.eyJ1IjoiY2FuYWdpZyIsImEiOiJja3V6dzdtNWYydGExMndvZG12NThqbmpkIn0._qXSCKmbH3kafrivy_7o9w',
   CSV: './Sample_Data.csv',
@@ -72,3 +72,18 @@ const config = {
     },
   ],
 };
+
+const nav = new mapboxgl.NavigationControl({ showCompass: false });
+map.addControl(nav, 'top-right');
+// Add geolocate control to the map.
+map.addControl(
+  new mapboxgl.GeolocateControl({
+  positionOptions: {
+  enableHighAccuracy: false
+  },
+  // When active the map will receive updates to the device's location as it changes.
+  trackUserLocation: true,
+  // Draw an arrow next to the location dot to indicate which direction the device is heading.
+  showUserHeading: true
+  })
+  );
