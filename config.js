@@ -11,7 +11,7 @@ const config = {
   title: '',
   description:
     '',
-  sideBarInfo: ['Location_Name', 'Address', 'Phone'],
+  sideBarInfo: ['Posting_Title', 'Company', 'City', 'State'],
   popupInfo: ['Location_Name'],
   filters: [
     {
