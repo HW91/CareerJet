@@ -5,7 +5,7 @@ const config = {
   style: 'mapbox://styles/canagig/ckv4ib5425pot14o6shn1e64g',
   accessToken:
     'pk.eyJ1IjoiY2FuYWdpZyIsImEiOiJja3V6dzdtNWYydGExMndvZG12NThqbmpkIn0._qXSCKmbH3kafrivy_7o9w',
-  CSV: './Sample_Data.csv',
+  CSV: 'Sample_Data.csv',
   center: [-101.871088,36.717658],
   zoom: 3,
   title: '',
