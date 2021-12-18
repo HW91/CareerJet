@@ -410,7 +410,7 @@ geocoder.on('result', (ev) => {
 });
 
 map.on('load', () => {
-  map.addControl(geocoder, 'bottom-center');
+  map.addControl(geocoder, 'bottom-right');
 
   // csv2geojson - following the Sheet Mapper tutorial https://www.mapbox.com/impact-tools/sheet-mapper
   console.log('loaded');
