@@ -12,7 +12,7 @@ const config = {
   description:
     '',
   sideBarInfo: ['Title', 'Company', 'City', 'State'],
-  popupInfo: ['Title'],
+  popupInfo: ['Title', 'Company', 'City', 'State'],
   filters: [
     {
       type: 'dropdown',
