@@ -15,7 +15,7 @@ const config = {
   filters: [
     {
       type: 'dropdown',
-      title: 'Company: ',
+      title: 'Featured Company: ',
       columnHeader: 'Company',
       listItems: [
         'Amuse',
