@@ -22,7 +22,6 @@ const config = {
         'Cannaclusive',
         'Curaleaf',
         'Latitude Inc.',
-        'Spanish',
       ],
     },
     {
