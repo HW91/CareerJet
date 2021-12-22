@@ -18,32 +18,24 @@ const config = {
       title: 'Company: ',
       columnHeader: 'Company',
       listItems: [
-        'English',
-        'French',
-        'Portuguese',
+        'Amuse',
+        'Cannaclusive',
+        'Curaleaf',
+        'Latitude Inc.',
         'Spanish',
       ],
     },
     {
       type: 'checkbox',
-      title: 'Devices available: ',
-      columnHeader: 'Devices_available', // Case sensitive - must match spreadsheet entry
-      listItems: ['Computer', 'Wi-Fi', 'Adaptive Laptops'], // Case sensitive - must match spreadsheet entry; This will take up to six inputs but is best used with a maximum of three;
+      title: 'Featured Jobs: ',
+      columnHeader: 'Featured Jobs', // Case sensitive - must match spreadsheet entry
+      listItems: ['Yes'], // Case sensitive - must match spreadsheet entry; This will take up to six inputs but is best used with a maximum of three;
     },
     {
-      type: 'dropdown',
-      title: 'Clients: ',
-      columnHeader: 'Clients',
-      listItems: [
-        'Adults',
-        'Disabled',
-        'Homeless',
-        'Immigrants/Refugees',
-        'Low Income',
-        'Seniors',
-        'Youth: Pre-teen',
-        'Youth: Teen',
-      ],
+      type: 'checkbox',
+      title: 'Remote Jobs: ',
+      columnHeader: 'Remote', // Case sensitive - must match spreadsheet entry
+      listItems: ['Yes'], // Case sensitive - must match spreadsheet entry; This will take up to six inputs but is best used with a maximum of three;
     },
   ],
 };
