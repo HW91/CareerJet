@@ -8,6 +8,8 @@ const config = {
   CSV: 'Sample_Data.csv',
   center: [-101.871088,36.717658],
   zoom: 3,
+  title: '',
+  description: '',
   sideBarInfo: ['Title', 'Company', 'City', 'State'],
   popupInfo: ['Title'],
   filters: [
