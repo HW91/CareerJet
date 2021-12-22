@@ -25,7 +25,7 @@ map.addControl(
   })
   );
 
-const map = new mapboxgl.Map({
+const geocoder = new mapboxgl.Map({
   container: 'map',
   style: config.style,
   center: config.center,
