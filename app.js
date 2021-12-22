@@ -10,7 +10,7 @@ const filteredGeojson = {
   features: [],
 };
 
-const nav = new mapboxgl.NavigationControl({ showCompass: false });
+const geocoder = new mapboxgl.NavigationControl({ showCompass: false });
 map.addControl(nav, 'top-right');
 // Add geolocate control to the map.
 map.addControl(
