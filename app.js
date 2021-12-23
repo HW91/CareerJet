@@ -10,22 +10,7 @@ const filteredGeojson = {
   features: [],
 };
 
-const geocoder = new mapboxgl.NavigationControl({ showCompass: false });
-map.addControl(nav, 'top-right');
-// Add geolocate control to the map.
-map.addControl(
-  new mapboxgl.GeolocateControl({
-  positionOptions: {
-  enableHighAccuracy: false
-  },
-  // When active the map will receive updates to the device's location as it changes.
-  trackUserLocation: true,
-  // Draw an arrow next to the location dot to indicate which direction the device is heading.
-  showUserHeading: true
-  })
-  );
-
-const geocoder = new mapboxgl.Map({
+const map = new mapboxgl.Map({
   container: 'map',
   style: config.style,
   center: config.center,
