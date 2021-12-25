@@ -454,7 +454,7 @@ map.on('load', () => {
             data: geojsonData,
           },
           paint: {
-            'circle-radius': 5, // size of circles
+            'circle-radius': 8, // size of circles
             'circle-color': '#007922', // color of circles
             'circle-stroke-color': 'white',
             'circle-stroke-width': 1,
