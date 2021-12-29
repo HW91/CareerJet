@@ -75,7 +75,7 @@
 
 .mapboxgl-popup-content {
     font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
-    text-align: left;
+    text-align: center;
     padding: 5;
     width: 180px;
   }
@@ -94,12 +94,3 @@
 
 
   
-#loading {
-    background: #ffffff url('gearscolor.gif') no-repeat center center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    z-index: 100;
-}
