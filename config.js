@@ -10,7 +10,7 @@ const config = {
   zoom: 3,
   title: '',
   description: '',
-  sideBarInfo: ['Title', 'Company', 'City', 'State'],
+  sideBarInfo: ['Title', 'Company', 'Location'],
   popupInfo: ['Title'],
   filters: [
     {
