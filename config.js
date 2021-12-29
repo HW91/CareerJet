@@ -10,8 +10,8 @@ const config = {
   zoom: 3,
   title: '',
   description: '',
-  sideBarInfo: ['Title', 'Company', 'Location'],
-  popupInfo: ['Title'],
+  sideBarInfo: ['Posting Title', 'Company', 'Location'],
+  popupInfo: ['Posting Title'],
   filters: [
     {
       type: 'dropdown',
