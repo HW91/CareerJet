@@ -511,8 +511,8 @@ function transformRequest(url) {
   return {
     url: isMapboxRequest ? url.replace('?', '?pluginName=finder&') : url,
   };
-  function hideLoader() {
-    $('#loading').hide();
+function hideLoader() {
+  $('#loading').hide();
 }
 
 $(window).ready(hideLoader);
