@@ -11,7 +11,7 @@ const config = {
   title: '',
   description: '',
   sideBarInfo: ['Title', 'Company', 'Location'],
-  popupInfo: ['Title'],
+  popupInfo: ['Title', 'Company', 'Location'],
   filters: [
     {
       type: 'dropdown',
