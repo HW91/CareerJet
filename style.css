@@ -76,8 +76,12 @@
 .mapboxgl-popup-content {
     font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
     text-align: left;
-    padding: 5;
-    width: 180px;
+    width: 290px;
+    padding: 0;
+  }
+
+  .mapboxgl-popup-content.hidden{
+      display: none;
   }
 
 .mapboxgl-popup-close-button {
@@ -91,6 +95,73 @@
     display: block;
 
   }
+
+  
+
+  .sidebar-image {
+    width: 97%;
+    height: 90px;
+    margin-bottom: 6px;
+  }
+  
+  span.close-button {
+    float: right;
+    right: 13px;
+    border-radius: 21px;
+    background-color: #cbbca3;
+    width: 26px;
+    height: 26px;
+    font-size: 14px;
+    color: #007922;
+    cursor: pointer;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 3px;
+    padding: 0;
+    line-height: 26px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 2001;
+  }
+  
+  span.close-button:hover {
+    border-color: #007922;
+    background-color: #007922;
+    color: #ffffff;
+  }
+  
+  div.sidebar-content .hidden {
+    display: none;
+  }
+
+  div.sidebar-content {
+    /* overflow-y: scroll !important;
+    overflow-x: hidden; */
+    height: auto;
+    font-size: 15px;
+  }
+  
+  .sidebar-content-inner {
+    margin-left: 7px;
+    margin-right: 0;
+    padding-bottom: 7px;
+    margin-top:7px;
+  }
+
+  button.sidebar-button{
+  margin-top: 10px;
+  color: #ffffff;
+  background-color: #007922;
+}
+
+button.sidebar-button{
+  cursor: pointer;
+  padding: 5px;
+}
+
+button.sidebar-button {
+  margin-left: 0;
+}
 
 
   
