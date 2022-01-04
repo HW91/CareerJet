@@ -7,7 +7,7 @@ const config = {
     'pk.eyJ1IjoiY2FuYWdpZyIsImEiOiJja3V6dzdtNWYydGExMndvZG12NThqbmpkIn0._qXSCKmbH3kafrivy_7o9w',
   CSV: 'Sample_Data.csv',
   center: [-101.871088,36.717658],
-  zoom: 3,
+  zoom: 5,
   title: '',
   description: '',
   sideBarInfo: ['Title', 'Company', 'Location'],
