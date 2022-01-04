@@ -11,7 +11,7 @@ const config = {
   title: '',
   description: '',
   sideBarInfo: ['Title', 'Company', 'Location'],
-  popupInfo: ['Title'],
+  popupInfo: ['Company Logo', 'Title', 'Company', 'Job Type', 'Salary', 'Location', 'Posting Date', 'Job Details Link'],
   filters: [
     {
       type: 'dropdown',
