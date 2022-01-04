@@ -20,8 +20,6 @@ const config = {
       listItems: [
         'Amuse',
         'Cannaclusive',
-        'Curaleaf',
-        'Latitude Inc.',
       ],
     },
     {
