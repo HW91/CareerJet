@@ -8,7 +8,7 @@ const config = {
   CSV: 'Sample_Data.csv',
   center: [-101.871088,36.717658],
   zoom: 3,
-  title: 'Search CITY to see jobs near you. Click filter to show FEATURED jobs.',
+  title: 'Search CITY to see jobs near you. <br/>Click filter to show FEATURED jobs.',
   description: '',
   sideBarInfo: ['Title', 'Company', 'Location'],
   popupInfo: ['Company Logo', 'Title', 'Company', 'Job Type', 'Salary', 'Location', 'Posting Date', 'Job Details Link'],
