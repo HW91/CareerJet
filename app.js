@@ -54,12 +54,6 @@ function createPopup(currentFeature) {
     "</p>" +
     "<a target='_blank' href='" + currentFeature.properties[config.popupInfo[7]] + "'><button class='sidebar-button'>Apply now</button></a></div>";
     
-    function createPopup(currentFeature) {
-    console.log('apply button clicked');
-    mixpanel.track('Apply Button Clicked',
-    currentFeature.properties[config.popupInfo[1]];
-    });  
-  
   new mapboxgl.Popup({ closeOnClick: true })
     .setLngLat(currentFeature.geometry.coordinates)
     .setHTML(popupDetails)
