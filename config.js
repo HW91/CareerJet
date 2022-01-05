@@ -9,7 +9,7 @@ const config = {
   center: [-101.871088,36.717658],
   zoom: 3,
   title: '',
-  description: 'Search city to see jobs near you. <br>Click filter to see FEATURED JOBS.',
+  description: 'Search CITY to see jobs near you. <br>Click filter to see FEATURED JOBS.',
   sideBarInfo: ['Title', 'Company', 'Location'],
   popupInfo: ['Company Logo', 'Title', 'Company', 'Job Type', 'Salary', 'Location', 'Posting Date', 'Job Details Link'],
   filters: [
