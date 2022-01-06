@@ -76,7 +76,7 @@
 .mapboxgl-popup-content {
     font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
     text-align: left;
-    width: 290px;
+    width: 200px;
     padding: 0;
   }
 
@@ -150,7 +150,7 @@
 
   button.sidebar-button{
   margin-top: 10px;
-  margin-left: 100px;
+  margin-left: 45px;
   color: #ffffff;
   background-color: #007922;
 }
