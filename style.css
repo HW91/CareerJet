@@ -149,7 +149,7 @@
   }
 
   button.sidebar-button{
-  margin-top: 10px;
+  margin: auto;
   color: #ffffff;
   background-color: #007922;
 }
@@ -160,5 +160,5 @@ button.sidebar-button{
 }
 
 button.sidebar-button {
-  margin: auto;
+  margin-left: 7px;
 }
