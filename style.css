@@ -149,7 +149,7 @@
   }
 
   button.sidebar-button{
-  margin: auto;
+  margin: 0 auto;
   color: #ffffff;
   background-color: #007922;
 }
