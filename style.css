@@ -149,7 +149,8 @@
   }
 
   button.sidebar-button{
-  margin: 0 auto;
+  margin-top: 10px;
+  margin-left: 30px;
   color: #ffffff;
   background-color: #007922;
 }
