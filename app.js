@@ -52,7 +52,7 @@ function createPopup(currentFeature) {
     "<p class='sidebar-paragraph'>Date Posted: " +
     currentFeature.properties[config.popupInfo[6]] +
     "</p>" +
-    "<a target='_blank' href='" + currentFeature.properties[config.popupInfo[7]] + "'><button class='sidebar-button'>Apply now</button></a></div>";
+    "<a class='ApplyButton' data-title='"+currentFeature.properties[config.popupInfo[1]]+"' data-company="+currentFeature.properties[config.popupInfo[2]]+" data-jobtype="+currentFeature.properties[config.popupInfo[3]]+" data-salay="+currentFeature.properties[config.popupInfo[4]]+" data-location="+currentFeature.properties[config.popupInfo[5]]+" data-posted="+currentFeature.properties[config.popupInfo[6]]+" target='_blank' href='" + currentFeature.properties[config.popupInfo[7]] + "'><button class='sidebar-button'>Apply now</button></a></div>";
     
   new mapboxgl.Popup({ closeOnClick: true })
     .setLngLat(currentFeature.geometry.coordinates)
@@ -566,4 +566,18 @@ map.on("mouseup", function () {
 // close popup on map touch
 map.on("touchmove", function () {
   $("div.custom-popup").removeClass("visible");
+});
+
+/* Mixpanel code for event on apply */
+$('body').on('click', '.ApplyButton', function() {
+
+  mixpanel.track('Apply Button Clicked',{
+    'Title':$(this).attr("data-title"),
+    'JobType':$(this).attr("data-jobtype"),
+    'JobCompany':$(this).attr("data-company"),
+    'Salary':$(this).attr("data-salary"),
+    'Location':$(this).attr("data-location"),
+    'DatePosted':$(this).attr("data-posted"),
+    'JobUrl':$(this).attr('href')
+    });
 });
