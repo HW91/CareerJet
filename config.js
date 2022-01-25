@@ -19,7 +19,7 @@ const config = {
       columnHeader: 'Company',
       listItems: [
         'Amuse',
-        'Cannaclusive',
+        'Holistic Industries',
       ],
     },
     {
